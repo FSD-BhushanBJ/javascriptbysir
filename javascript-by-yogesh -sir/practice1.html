@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email validation</title>
+    <style>
+        body {
+          background-color: #1ca345;
+          background-image: url(https://media.deloitte.com/is/image/deloitte/gen-ai-for-internal-audit-risks-and-rewards-center-header-1920-880:800-x-600?$Responsive$&fmt=webp&fit=stretch,1&dpr=off);
+          background-repeat: no-repeat;
+          background-size: cover;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 100vh;
+          font-family: Arial, sans-serif;
+        }
+  
+        .container {
+          background-color: #14dc32;
+
+          padding: 20px;
+          border-radius: 8px;
+          box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+          width: 400px;
+          text-align: center;
+          justify-content: center;
+          align-items: center;
+        }
+  
+        h1 {
+          color: #000000;
+          font-size: 24px;
+          margin-bottom: 20px;
+        }
+  
+        p {
+          color: #000000;
+          font-size: 16px;
+          margin-bottom: 20px;
+        }
+  
+        input[type="text"] {
+          width: 95%;
+          padding: 10px;
+          margin: 10px 0;
+          border: 1px solid #ccc;
+          border-radius: 4px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+  
+        button {
+          padding: 10px;
+          margin: 10px 5px 0 0;
+          background-color: #28a745;
+          color: white;
+          border: none;
+          border-radius: 4px;
+          cursor: pointer;
+          font-size: 16px;
+        }
+  
+        button:hover {
+          background-color: #218838;
+        }
+  
+        #output {
+          height: 15px;
+          margin-top: 20px;
+          padding: 10px;
+          background-color: #f8f9fa;
+          border: 1px solid #ddd;
+          border-radius: 4px;
+          color: #000000;
+        }
+  
+        button:focus {
+          outline: none;
+          box-shadow: 0 0 5px rgba(40, 167, 69, 0.5);
+        }
+  
+        input[type="text"]:focus {
+          border-color: #28a745;
+          box-shadow: 0 0 5px rgba(40, 167, 69, 0.5);
+        }
+      </style>
+    </head>
+    <body>
+      <div class="container">
+        <h1>Login Page</h1>
+        <p>Length Calculators.</p>
+       
+        <input type="text" placeholder="Enter a email" id="input-one" />
+       <button onclick="findMarks()">Oparation</button>
+       <div id="output"></div>
+       <div id="output-one"></div>
+      </div>
+      <script>
+        function findMarks(){
+         let x = Number(document.getElementById("input-one").value)
+
+         if(x >= 75 && x < 80){
+            alert("very good")
+         }else if (x > 70 && x < 80){
+            alert("good")
+         }else{
+            alert("khup kami be")
+         }
+            
+         
+
+           
+            
+        }
+     
+      </script>
+</html>

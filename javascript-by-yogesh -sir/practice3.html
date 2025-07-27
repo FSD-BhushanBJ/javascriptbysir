@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Awesome UI - Email Validation & More</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #1e3c72, #2a5298);
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .container {
+      background: #ffffffee;
+      border-radius: 15px;
+      padding: 30px 25px;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+      width: 500px;
+      text-align: center;
+      transition: 0.3s ease;
+    }
+
+    .container:hover {
+      box-shadow: 0 12px 35px rgba(0, 0, 0, 0.3);
+    }
+
+    h1 {
+      color: #113892;
+      font-size: 28px;
+      margin-bottom: 10px;
+    }
+
+    p {
+      color: #444;
+      font-size: 14px;
+      margin-bottom: 15px;
+    }
+
+    input[type="text"] {
+      width: 100%;
+      padding: 20px;
+      border: 2px solid #113892;
+      border-radius: 8px;
+      margin-bottom: 15px;
+    
+      font-size: 16px;
+    }
+
+    input[type="text"]:focus {
+      outline: none;
+      border-color: #28a745;
+      box-shadow: 0 0 8px rgba(40, 167, 69, 0.5);
+    }
+
+    button {
+      display: block;
+      width: 100%;
+      margin: 8px 0;
+      padding: 10px;
+      background-color: #113892;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 15px;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    button:hover {
+      background-color: #0c2c73;
+    }
+
+    #output {
+      background: #f0f0f0;
+      height: 25px;
+      padding: 12px;
+      margin-top: 15px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      font-weight: bold;
+      color: #000;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Assignment Checker</h1>
+    <p>Type something below and click a button to check:</p>
+
+    <input type="text" id="input" placeholder="Enter any value..." />
+
+    <button onclick="numberCheck()">Check Number is + - 0</button>
+    <button onclick="ageCheck()">Check School/College</button>
+    <button onclick="userName()">Check Name</button>
+    <button onclick="findYear()">Check Leap Year</button>
+    <button onclick="userAuthetic()">Authenticate User</button>
+    <button onclick="numPositive()">Positive/Negative + Even/Odd</button>
+    <button onclick="onclickEvent()">Check Boolean</button>
+
+    <div id="output">Result will appear here</div>
+  </div>
+
+  <script>
+    function numberCheck() {
+      let x = Number(document.getElementById("input").value);
+      if (x > 0) alert("Positive Number");
+      else if (x < 0) alert("Negative Number");
+      else if (x === 0) alert("Number is zero");
+      else alert("Invalid input");
+      document.getElementById("output").innerHTML = "Number: " + x;
+    }
+
+    function ageCheck() {
+      let x = Number(document.getElementById("input").value);
+      if (x >= 20 && x <= 80) {
+        alert("Student in College");
+        document.getElementById("output").innerHTML = "College Student (Age: " + x + ")";
+      } else if (x >= 13 && x <= 19) {
+        alert("Student in High School");
+        document.getElementById("output").innerHTML = "High School Student (Age: " + x + ")";
+      } else {
+        alert("Student in Convent");
+        document.getElementById("output").innerHTML = "Convent Student (Age: " + x + ")";
+      }
+    }
+
+    function userName() {
+      let x = document.getElementById("input").value;
+      if (x.toUpperCase() === "JONY") {
+        alert("Input is valid");
+      } else {
+        alert("Please enter correct name");
+      }
+      document.getElementById("output").innerHTML = "User Name: " + x.toUpperCase();
+    }
+
+    function findYear() {
+      let x = Number(document.getElementById("input").value);
+      if ((x % 4 === 0 && x % 100 !== 0) || (x % 400 === 0)) {
+        alert("This is a Leap Year");
+        document.getElementById("output").innerHTML = "Leap Year: " + x;
+      } else {
+        alert("Not a Leap Year");
+        document.getElementById("output").innerHTML = "Not a Leap Year: " + x;
+      }
+    }
+
+    function userAuthetic() {
+      let x = document.getElementById("input").value;
+      if (x.toUpperCase() === "ADMIN" || x.toUpperCase() === "SUPERUSER") {
+        alert("Authenticated");
+        document.getElementById("output").innerHTML = "Authenticated User: " + x.toUpperCase();
+      } else {
+        alert("Not Authenticated");
+        document.getElementById("output").innerHTML = "Unauthenticated User: " + x;
+      }
+    }
+
+    function numPositive() {
+      let x = Number(document.getElementById("input").value);
+      if (x === 0) {
+        alert("Number is zero");
+        document.getElementById("output").innerHTML = "Number is zero";
+      } else if (x > 0) {
+        if (x % 2 === 0) {
+          alert("Positive Even Number");
+          document.getElementById("output").innerHTML = "Positive Even: " + x;
+        } else {
+          alert("Positive Odd Number");
+          document.getElementById("output").innerHTML = "Positive Odd: " + x;
+        }
+      } else {
+        if (x % 2 === 0) {
+          alert("Negative Even Number");
+          document.getElementById("output").innerHTML = "Negative Even: " + x;
+        } else {
+          alert("Negative Odd Number");
+          document.getElementById("output").innerHTML = "Negative Odd: " + x;
+        }
+      }
+    }
+
+    function BooleanValue(input) {
+      if (input === true || input === "true") return "Yes";
+      else if (input === false || input === "false") return "No";
+      else return "Null";
+    }
+
+    function onclickEvent() {
+      let r = document.getElementById("input").value;
+      let result = BooleanValue(r);
+      alert(result);
+      document.getElementById("output").innerHTML = "Boolean Result: " + result;
+    }
+  </script>
+</body>
+</html>
