@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dictionery Push</title>
+  </head>
+  <body>
+    <script>
+      let students = [];
+      let x = 0
+     
+
+      let name = prompt("Enter a Name");
+      let age = prompt("Enter a age");
+
+      let skills = [];
+      
+
+      for (let i = 0; i < 3; i++) {
+        skills[skills.length] = prompt("Enter your Skills");
+       
+      }
+    
+      let studentData = { name: name, age: age, skills: skills };
+
+      students.push(studentData);
+
+      console.log(students);
+    </script>
+  </body>
+</html>
