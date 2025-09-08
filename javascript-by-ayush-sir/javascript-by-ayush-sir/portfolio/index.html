@@ -12,14 +12,7 @@
             box-sizing: border-box;
         }
 
-        :root {
-            --bg-primary: #0B0B0C;
-            --bg-secondary: #1F2226;
-            --neon-blue: #3AA6FF;
-            --neon-magenta: #FF3DAE;
-            --text-primary: #FFFFFF;
-            --text-secondary: #B0B0B0;
-        }
+      
 
         body {
             font-family: 'Inter', sans-serif;
@@ -644,6 +637,14 @@
             margin: 3px 0;
             transition: 0.3s;
         }
+        :root {
+            --bg-primary: #0B0B0C;
+            --bg-secondary: #1F2226;
+            --neon-blue: #3AA6FF;
+            --neon-magenta: #FF3DAE;
+            --text-primary: #FFFFFF;
+            --text-secondary: #B0B0B0;
+        }
 
         /* Responsive Design */
         @media (max-width: 768px) {
@@ -1028,7 +1029,7 @@
                         <div class="profile-photo">
                             <div class="photo-placeholder">
                                 <span>📸</span>
-                                <p>Your Photo Here</p>
+                                <p><img src="https://plus.unsplash.com/premium_photo-1689568126014-06fea9d5d341?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8cHJvZmlsZXxlbnwwfHwwfHx8MA%3D%3D" alt="" style="object-fit: cover;"></p>
                             </div>
                         </div>
                         <div class="photo-frame"></div>
@@ -1053,7 +1054,7 @@
                                 <div class="detail-icon">💼</div>
                                 <div class="detail-content">
                                     <h4>Experience</h4>
-                                    <p>2+ Years in Web Development<br>
+                                    <p>1+ Years in Web Development<br>
                                     <span class="detail-sub">Frontend & Backend Development</span></p>
                                 </div>
                             </div>
@@ -1062,7 +1063,7 @@
                                 <div class="detail-icon">🌍</div>
                                 <div class="detail-content">
                                     <h4>Location</h4>
-                                    <p>Mumbai, India<br>
+                                    <p>Katol, Nagpur India<br>
                                     <span class="detail-sub">Open to Remote Work</span></p>
                                 </div>
                             </div>
@@ -1248,14 +1249,15 @@
                 
                 <!-- Project Navigation -->
                 <div class="project-nav">
-                    <button class="project-nav-btn active" data-project="all">All Projects</button>
-                    <button class="project-nav-btn" data-project="web">Web Apps</button>
-                    <button class="project-nav-btn" data-project="mobile">Mobile Apps</button>
-                    <button class="project-nav-btn" data-project="fullstack">Full-Stack</button>
+                    <button class="project-nav-btn active" data-project="all">Live Projects</button>
+                    <button class="project-nav-btn" data-project="fullstack">HTML</button>
+                    <button class="project-nav-btn" data-project="web">CSS</button>
+                    <button class="project-nav-btn" data-project="mobile">JavaScript</button>
+                    <!-- <button class="project-nav-btn" data-project="fullstack"></button>
                     <button class="project-nav-btn" data-project="ecommerce">E-Commerce</button>
                     <button class="project-nav-btn" data-project="dashboard">Dashboards</button>
                     <button class="project-nav-btn" data-project="games">Games & Fun</button>
-                    <button class="project-nav-btn" data-project="tools">Tools & Utilities</button>
+                    <button class="project-nav-btn" data-project="tools">Tools & Utilities</button> -->
                 </div>
 
                 <!-- Project Pages -->
@@ -1276,6 +1278,8 @@
                                 <div class="project-links">
                                     <a href="#" class="btn">Live Demo</a>
                                     <a href="#" class="btn secondary">GitHub</a>
+                                    <a href="#" class="btn">Documentation</a>
+                                    <a href="#" class="btn secondary">Figma</a>
                                 </div>
                             </div>
                             <div class="card project-card fade-in" data-category="mobile">
@@ -1540,7 +1544,10 @@
                                 <div class="project-links">
                                     <a href="#" class="btn">Live Demo</a>
                                     <a href="#" class="btn secondary">GitHub</a>
+                                    <a href="#" class="btn">Documentation</a>
+                                    <a href="#" class="btn secondary">Figma</a>
                                 </div>
+                                
                             </div>
                         </div>
                     </div>
@@ -1672,7 +1679,10 @@
                                 <div class="project-links">
                                     <a href="#" class="btn">Live Demo</a>
                                     <a href="#" class="btn secondary">GitHub</a>
+                                    <a href="#" class="btn">Documentation</a>
+                                    <a href="#" class="btn secondary">Figma</a>
                                 </div>
+                                
                             </div>
                         </div>
                     </div>
@@ -1809,12 +1819,12 @@
                 
                 <div class="footer-social">
                     <a href="https://github.com/bhushanjatgade" target="_blank" class="social-link">
-                        <span>🐙</span>
+                        <span><i class="fa fa-github"></i></span>
                     </a>
                     <a href="https://linkedin.com/in/bhushanjatgade" target="_blank" class="social-link">
                         <span>💼</span>
                     </a>
-                    <a href="mailto:bhushan.jatgade@email.com" class="social-link">
+                    <a href="mailto:bhushanjatgade@gmail.com" class="social-link">
                         <span>📧</span>
                     </a>
                     <a href="https://twitter.com/bhushanjatgade" target="_blank" class="social-link">
@@ -1825,10 +1835,10 @@
             
             <div class="footer-bottom">
                 <div class="footer-bottom-content">
-                    <p>&copy; 2024 Bhushan Jatgade. All rights reserved.</p>
+                    <p>&copy; 2025 Bhushan Jatgade. All rights reserved.</p>
                 </div>
                 <div class="footer-heart">
-                    <p>Made with <span class="heart">❤️</span> and lots of ☕</p>
+                    <p>Powered By Enjoy Programming</p>
                 </div>
             </div>
         </div>
@@ -1838,7 +1848,7 @@
     <div class="scroll-top" onclick="scrollToTop()">↑</div>
 
     <!-- Back to Home Button -->
-    <div class="back-home" onclick="goToHome()">🏠</div>
+    <!-- <div class="back-home" onclick="goToHome()">🏠</div> -->
 
     <script>
         // Navigation functionality
