@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Precision Welding</title>
+  </head>
+  <body style="font-family: Arial, sans-serif; text-align: center; background-color: #f9f9f9; margin: 0; padding: 20px;">
+    
+    <h1 id="heading" style="color: #333; font-size: 32px; margin-bottom: 5px;">PRECISION WELDING</h1>
+    <h1 id="headingtwo" style="color: #555; font-size: 28px; margin-top: 0; margin-bottom: 20px;">& METAL FABRICATION</h1>
+    
+    <p id="paragraph" style="max-width: 600px; margin: auto; color: #444; font-size: 16px; line-height: 1.6;">
+      Sai Transformation is Katol based metal manufacturer fabrication company known for roofing sheds, metal and school furniture’s, gates & window grills. A trusted branch of Sai Fabrication & Gas Welding (Est: 1998).
+    </p>
+    
+    <p id="paragraphtwo" style="max-width: 600px; margin: 20px auto; color: #444; font-size: 16px; line-height: 1.6;">
+      We offer a wide range of metal fabrication services, including Gates, Window-Grills, Staircases, Industry Shed & Roofing and more. Our team possesses the knowledge and skills to handle any project from standard designs to unique, custom-build structures.
+    </p>
+
+    <h2 id="admission-process-heading" style="color: #333; font-size: 20px; margin-top: 30px;">admission-process-heading</h2>
+    <ol id="admission-process-list" style="max-width: 400px; margin: auto; text-align: left; color: #555; font-size: 16px;">
+        <li>Research colleges and courses</li>
+        <li>Fill out application forms</li>
+        <li>Appear for entrance exams</li>
+        <li>Attend counselling/interview sessions</li>
+        <li>Submit required documents and fees</li>
+    </ol>
+
+    <div style="margin-top: 30px;">
+      <select id="select-lang" name="language" onchange="translateLang()" style="padding: 10px 15px; font-size: 16px; border-radius: 5px; border: 1px solid #ccc;">
+        <option value="English">English</option>
+        <option value="Marathi">मराठी</option>
+        <option value="Hindi">हिंदी</option>
+      </select>
+    </div>
+
+    <!-- Marathi language -->
+    <script src="./marathiData.js"></script>
+    <!-- English language -->
+    <script src="./englishData.js"></script>
+    <!-- Hindi language -->
+    <script src="./hindiData.js"></script>
+
+    <script>
+        const translate = {
+            English: englishData,
+            Marathi: marathiData,
+            Hindi: hindiData
+        };
+
+        function translateLang(){
+            const selectedLanguage = document.getElementById("select-lang").value;
+            let result= translate[selectedLanguage];
+            document.getElementById("heading").innerHTML = result.heading;
+            document.getElementById("headingtwo").innerHTML = result.headingtwo;
+            document.getElementById("paragraph").innerHTML = result.paragraph;
+            document.getElementById("paragraphtwo").innerHTML = result.paragraphtwo;
+            document.getElementById("admission-process-heading").innerHTML = result.admission_process_heading;
+            document.getElementById("admission-process-list").innerHTML = result.admission_process_list;
+
+            localStorage.setItem("langauge", selectedLanguage);
+        }
+
+        window.onload = function (){
+            let savedLanguage = localStorage.getItem("langauge");
+            if(savedLanguage){
+                document.getElementById("select-lang").value = savedLanguage;
+            }
+            translateLang();
+        };
+    </script>
+    
+  </body>
+</html>
