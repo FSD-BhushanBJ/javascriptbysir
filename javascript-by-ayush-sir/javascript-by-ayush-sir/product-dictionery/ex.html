@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Student & Cart Count</title>
+    <style>
+      header {
+        width: 100vw;
+        height: 80px;
+        background-color: rgb(100, 100, 195);
+        display: flex;
+        color: white;
+        align-items: center;
+        justify-content: space-evenly;
+      }
+      button {
+        width: 140px;
+        height: 40px;
+        font-size: 16px;
+      }
+      .student {
+        margin: 10px;
+        font-size: 18px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div id="studentCount">Students : 0</div>
+      <div id="cartCount">Cart : 0</div>
+      <button onclick="addStudent()">Add Student</button>
+    </header>
+
+    <div id="display"></div>
+
+    <script>
+      let students = ["bhushan", "shruti", "himanshu", "mayank"];
+      let cart = [];
+
+      // Function to update student count
+      function updateStudentCount() {
+        document.getElementById("studentCount").innerHTML = `Students : ${students.length}`;
+      }
+
+    
+      function updateCartCount() {
+        document.getElementById("cartCount").innerHTML = `Cart : ${cart.length}`
+        console.log(cart.length);
+      }
+
+     
+      students.map((student) => {
+        document.getElementById("display").innerHTML += `
+          <div class="student">
+            <p>${student}</p>
+            <button onclick="addToCart('${student}')">Add to Cart</button>
+          </div>`;
+      });
+
+    
+      updateStudentCount();
+      updateCartCount();
+
+      function addStudent() {
+        let name = prompt("Enter student name:");
+        students.push(name);
+
+        document.getElementById("display").innerHTML += `
+
+        
+          <div class="student">
+            <p>${name}</p>
+            <button onclick="addToCart('${name}')">Add to Cart</button>
+          </div>`;
+
+        updateStudentCount();
+      }
+
+   
+      function addToCart(name) {
+        cart.push(name);
+        updateCartCount();
+      }
+    </script>
+  </body>
+</html>

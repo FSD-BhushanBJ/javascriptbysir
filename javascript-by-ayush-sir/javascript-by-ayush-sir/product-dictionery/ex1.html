@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ex One</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+      }
+      header {
+        height: 80px;
+        width: 100%;
+        background-color: red;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        padding: 0 20px;
+        color: white;
+      }
+      header h1 {
+        margin-right: auto;
+      }
+      button {
+        margin-left: 20px;
+        width: 150px;
+        height: 50px;
+        font-size: 18px;
+        border-radius: 9px;
+        background-color: green;
+        color: white;
+        border: none;
+        cursor: pointer;
+      }
+      #display,
+      #cart-items {
+        margin: 20px;
+        padding: 0;
+      }
+      li {
+        list-style: none;
+        margin-bottom: 10px;
+      }
+      .pro-btn {
+        margin-left: 10px;
+        background: blue;
+        color: white;
+        border: none;
+        padding: 5px 10px;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+      .remove-btn {
+        background: darkred;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1 id="count">Product Count : 0</h1>
+      <button id="add" onclick="addProduct()">Add Product +</button>
+      <h2 id="cart-count" style="margin-right:20px;">Cart : 0</h2>
+    </header>
+
+    <h2 style="margin:20px;">Products:</h2>
+    <ul id="display"></ul>
+
+    <h2 style="margin:20px;">Cart Items:</h2>
+    <ul id="cart-items"></ul>
+
+    <script src="./product.js"></script>
+    <script>
+    //   let itProducts = [
+    //     { ProductName: "Laptop", price: 55000 },
+    //     { ProductName: "Smartphone", price: 25000 },
+    //     { ProductName: "Tablet", price: 15000 }
+    //   ]; // 👈 starting products
+
+      let cartArr = [];
+      let cartcount = 0;
+
+      // Add Product
+      function addProduct() {
+        let input = prompt("Add Product Name");
+        let pinput = prompt("Enter Product Price");
+
+        if (input && pinput) {
+          itProducts.push({
+            ProductName: input,
+            price: pinput,
+          });
+          count();
+          addedpro();
+        }
+      }
+
+      // Product Count
+      function count() {
+        document.getElementById("count").innerHTML =
+          `Product Count : ${itProducts.length}`;
+      }
+
+      // Display Products (always shows ALL products)
+      function addedpro() {
+        document.getElementById("display").innerHTML = ""; // clear old data
+        itProducts.forEach((Product, index) => {
+          document.getElementById("display").innerHTML += `
+            <li>
+              ${Product.ProductName} - ₹${Product.price}
+              <button class="remove-btn pro-btn" onclick="deleteBut(${index})">Remove</button>
+              <button class="pro-btn" onclick="cartCount(${index})">Add to Cart</button>
+            </li>`;
+        });
+      }
+
+      // Add to Cart
+      function cartCount(index) {
+        cartcount++;
+        document.getElementById("cart-count").innerHTML =
+          `Cart : ${cartcount}`;
+        cartArr.push(itProducts[index]); // add product into cart array
+        showCart();
+      }
+
+      // Show Cart Items
+      function showCart() {
+        document.getElementById("cart-items").innerHTML = "";
+        cartArr.forEach((Product, i) => {
+          document.getElementById("cart-items").innerHTML += `
+            <li>${Product.ProductName} - ₹${Product.price}</li>`;
+        });
+      }
+
+      // Delete Product
+      function deleteBut(index) {
+        itProducts.splice(index, 1);
+        count();
+        addedpro();
+      }
+
+      // Initial call
+      count();
+      addedpro();
+    </script>
+  </body>
+</html>

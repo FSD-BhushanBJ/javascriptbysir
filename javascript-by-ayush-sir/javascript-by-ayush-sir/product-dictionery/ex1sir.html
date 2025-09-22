@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Example 3</title>
+    <style>
+      header {
+        width: 100vw;
+        height: 80px;
+        background-color: rgb(100, 100, 195);
+        display: flex;
+        color: white;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-evenly;
+      }
+      button {
+        width: 100px;
+        height: 60px;
+        font-size: 25px;
+      }
+      p {
+        font-size: 25px;
+      }
+      /* .student {
+        width: 100%;
+        display: ;
+      } */
+    </style>
+  </head>
+  <body>
+    <header>
+      <div id="">Count : 0</div>
+      <button onclick="addStudent()">Add +</button>
+      <button onclick="cart()" id="count">Cart : 0</button>
+    </header>
+    <div class="display" id="display">
+      <p id="students"></p>
+    </div>
+    <!-- <script src="./product.js"></script> -->
+
+    <script>
+      let students = ["bhushan", "shruti", "himanshu", "mayank"];
+
+      let student2 = [];
+
+      function addStudent() {
+        let name = prompt("Enter student name:");
+        student2.push(name);
+        document.getElementById("display").innerHTML += `
+    <div class="student">
+      <p>${name}</p><button class="addStudent()">Add</button>
+    </div>`;
+        document.getElementById(
+          "count"
+        ).innerHTML = `cart : ${student2.length}`;
+      }
+      // Display students
+      students.map((student) => {
+        document.getElementById(
+          "display"
+        ).innerHTML += `<div class="student"><p>${student}</p> <button class="addStudent()>Add</button>"
+            ></div>`;
+      });
+
+      // Show count
+      function count() {
+        document.getElementById(
+          "count"
+        ).innerHTML = `Count : ${students.length}<button class="addStudent()>Add</button>                                                                                                                                                                                                                            `;
+      }
+
+      function addStudent() {
+        students.map((student) => {
+        document.getElementById(
+          "display"
+        ).innerHTML += ""})
+        let name = prompt("Enter student name:");
+        student2.push(name);
+        document.getElementById("display").innerHTML += `
+    <div class="student">
+      <p>${name}</p><button class="addStudent()">Add</button>
+    </div>`;
+        document.getElementById(
+          "count"
+        ).innerHTML = `Cart : ${student2.length}`;
+      }
+    </script>
+  </body>
+</html>

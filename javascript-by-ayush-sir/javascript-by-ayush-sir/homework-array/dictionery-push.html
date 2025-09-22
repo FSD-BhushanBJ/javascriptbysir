@@ -14,15 +14,18 @@
       let name = prompt("Enter a Name");
       let age = prompt("Enter a age");
 
-      let skills = [];
+      let softskills = [];
+      let techskills = [];
       
 
       for (let i = 0; i < 3; i++) {
-        skills[skills.length] = prompt("Enter your Skills");
-       
+        softskills[softskills.length] = prompt("Enter your softSkills");
       }
+      for(let j = 0;j < 3; j++){
+          techskills[techskills.length]= prompt("Enter your techskills")
+        }
     
-      let studentData = { name: name, age: age, skills: skills };
+      let studentData = { name: name, age: age, softskills: softskills,techskills: techskills };
 
       students.push(studentData);
 

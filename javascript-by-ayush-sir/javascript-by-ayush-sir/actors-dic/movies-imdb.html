@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movies Imdb</title>
+</head>
+<body>
+    <script src="./actors-data.js"></script>
+    <script>
+        for(let b of newData2){
+            for(let j=0;j<b.movies.length-1;j++){
+                let z = b.movies[j];
+                let c = b.movies[j];
+                if(z.name > c.name){
+                    c.movies[j]=b;
+                    c.movies[j+1]=z
+                }
+            }
+        }
+        for (let a of newData2){
+            let moviesArr = a.movies
+            for (let b of moviesArr){
+                for(let i = 0; i<moviesArr.length -1;i++){
+                    let x = moviesArr[i]
+                    let y = moviesArr[i+1]
+                    if(x.IMDB_Rating < y.IMDB_Rating){
+                        moviesArr[i] = y
+                        moviesArr[i + 1] = x
+                    }
+                }
+            }
+            console.log( moviesArr);
+
+        }
+       
+
+
+
+//         for (let a of newData2) {
+//     let moviesArr = a.movies;
+
+//     // Bubble Sort Logic
+//     for (let i = 0; i < moviesArr.length; i++) {
+//         for (let j = 0; j < moviesArr.length - 1; j++) {
+//             if (moviesArr[j].IMDB_Rating > moviesArr[j + 1].IMDB_Rating) {
+//                 // Swap
+//                 let temp = moviesArr[j];
+//                 moviesArr[j] = moviesArr[j + 1];
+//                 moviesArr[j + 1] = temp;
+//             }
+//         }
+//     }
+
+//     console.log(a.name, moviesArr); // Prints actor name + sorted movies
+// }
+
+for (let i = 0; i < newData2.length - 1; i++) {
+  for (let j = 0; j < newData2.length - 1 - i; j++) {
+    if (newData2[j].name > newData2[j + 1].name) {
+      let temp = newData2[j];
+      newData2[j] = newData2[j + 1];
+      newData2[j + 1] = temp;
+    }
+  }
+}
+
+
+for (let actor of newData2) {
+  let moviesArr = actor.movies;
+  for (let i = 0; i < moviesArr.length - 1; i++) {
+    for (let j = 0; j < moviesArr.length - 1 - i; j++) {
+      if (moviesArr[j].name > moviesArr[j + 1].name) {
+        let temp = moviesArr[j];
+        moviesArr[j] = moviesArr[j + 1];
+        moviesArr[j + 1] = temp;
+      }
+    }
+  }
+}
+
+for (let actor of newData2) {
+  console.log("Actor:", actor.name,"----------");
+  for (let movie of actor.movies) {
+    console.log(movie.name, movie.IMDB_Rating);
+  }
+}
+    </script>
+</body>
+</html>

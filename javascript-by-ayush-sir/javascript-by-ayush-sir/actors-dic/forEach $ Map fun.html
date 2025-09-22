@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script src="./actors-data.js"></script>
+    <script>
+      newData2.forEach((actor) => {
+        console.log("Actor:", actor.name);
+
+        actor.movies.forEach((movie) => {
+          console.log(movie);
+            // "   Movie:",
+            // movie.name,
+            // "| Year:",
+            // movie.Release_date,
+            // "| Rating:",
+            // movie.IMDB_Rating
+        
+        });
+      });
+
+      // newData2.map((actor,index) => {
+      //   console.log(index)
+      //   console.log(actor.name)
+      //   let moviesarr = actor.movies;
+      //   moviesarr.map(movies,index)=>{
+
+      //     console.log(movie.Name)
+      //   }
+      
+      // })
+      newData2.map((actor, index) => {
+  console.log("Actor Index:", index);
+  console.log("Actor Name:", actor.name);
+
+  let moviesarr = actor.movies;
+  moviesarr.map((movie, i) => {
+    console.log("   Movie Index:", i, "| Movie Name:", movie.name);
+  });
+});
+
+    </script>
+  </body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Key & Value update</title>
+  </head>
+  <body>
+    <script>
+      let students = [
+        {
+          id: 1,
+          name: "Bhushan",
+          marks: {
+            HTML: 85,
+            CSS: 95,
+            JS: 75,
+          },
+        },
+      ];
+
+      if (students[0].name) {              // check if "name" exists
+  students[0].Name = students[0].name;  // copy value to new key
+}
+
+console.log(students);
+    </script>
+  </body>
+</html>

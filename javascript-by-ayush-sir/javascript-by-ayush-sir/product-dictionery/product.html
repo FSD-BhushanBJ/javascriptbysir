@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>IT Products</title>
+  </head>
+  <body
+    style="
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #e0eafc, #cfdef3);
+      margin: 0;
+      padding: 20px;
+    "
+  >
+    <h1 style="text-align: center; color: #2c3e50; margin-bottom: 30px">
+      💻 IT Products Store
+    </h1>
+
+    <div
+      id="productContainer"
+      style="
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 30px;
+        max-width: 1200px;
+        margin: 0 auto;
+      "
+    ></div>
+
+    <script>
+      let itProducts = [
+        { ProductName: "Laptop", image: "https://m.media-amazon.com/images/I/61S+iQmF5NL._SX679_.jpg", price: 55000 },
+        { ProductName: "Smartphone", image: "https://m.media-amazon.com/images/I/41X9qNxoJKL._SY300_SX300_QL70_FMwebp_.jpg", price: 25000 },
+        { ProductName: "Tablet", image: "https://m.media-amazon.com/images/I/71BM3TBipEL._SX679_.jpg", price: 30000 },
+        { ProductName: "Desktop PC", image: "https://m.media-amazon.com/images/I/7120H5WUJYL._SX679_.jpg", price: 45000 },
+        { ProductName: "Monitor (24 inch)", image: "https://m.media-amazon.com/images/I/410QRmCiZbL._SX300_SY300_QL70_FMwebp_.jpg", price: 15000 },
+        { ProductName: "Keyboard", image: "https://m.media-amazon.com/images/I/312gtWap5DL._SY300_SX300_QL70_FMwebp_.jpg", price: 1200 },
+        { ProductName: "Mouse", image: "https://m.media-amazon.com/images/I/21+ocjYn8ML._SY300_SX300_QL70_FMwebp_.jpg", price: 800 },
+        { ProductName: "Printer", image: "https://m.media-amazon.com/images/I/31u6f4UOYhL._SY300_SX300_QL70_FMwebp_.jpg", price: 18000 },
+        { ProductName: "External Hard Drive (1TB)", image: "https://m.media-amazon.com/images/I/21mpp3Wb0bL._SY300_SX300_QL70_FMwebp_.jpg", price: 4500 },
+        { ProductName: "Router", image: "https://m.media-amazon.com/images/I/31DtT2LiLdL._SY300_SX300_QL70_FMwebp_.jpg", price: 2500 },
+      ];
+
+      let container = document.getElementById("productContainer");
+      let cart = []; // This will store added products
+
+      itProducts.forEach((product) => {
+        let card = document.createElement("div");
+        card.style.background = "#fff";
+        card.style.padding = "20px";
+        card.style.borderRadius = "12px";
+        card.style.boxShadow = "0 6px 15px rgba(0,0,0,0.1)";
+        card.style.textAlign = "center";
+        card.style.display = "flex";
+        card.style.flexDirection = "column";
+        card.style.justifyContent = "space-between";
+        card.style.transition = "transform 0.3s, box-shadow 0.3s";
+
+        card.onmouseover = function () {
+          card.style.transform = "translateY(-8px)";
+          card.style.boxShadow = "0 12px 25px rgba(0,0,0,0.2)";
+        };
+        card.onmouseout = function () {
+          card.style.transform = "translateY(0)";
+          card.style.boxShadow = "0 6px 15px rgba(0,0,0,0.1)";
+        };
+
+        let button = document.createElement("button");
+        button.innerHTML = "🛒 Add to Cart";
+        button.style = `
+          background:#3498db;
+          color:#fff;
+          border:none;
+          padding:12px 20px;
+          border-radius:8px;
+          cursor:pointer;
+          font-size:16px;
+          margin-top:auto;
+          transition: background 0.3s;
+        `;
+        button.onmouseover = () => (button.style.background = "#2980b9");
+        button.onmouseout = () => (button.style.background = "#3498db");
+
+        // Add to cart functionality
+        button.onclick = () => {
+          cart.push(product);
+          alert(`${product.ProductName} added to cart! \nTotal items: ${cart.length}`);
+          console.log(cart);
+        };
+
+        card.innerHTML = `
+          <img src="${product.image}" alt="${product.ProductName}" style="width:100%; height:180px; object-fit:contain; border-radius:8px; margin-bottom:15px;">
+          <h3 style="color:#2c3e50; font-size:18px; margin:10px 0;">${product.ProductName}</h3>
+          <p style="color:#27ae60; font-weight:bold; font-size:20px; margin:10px 0;">₹ ${product.price}</p>
+        `;
+        card.appendChild(button); // Add button to card
+        container.appendChild(card);
+      });
+    </script>
+  </body>
+</html>

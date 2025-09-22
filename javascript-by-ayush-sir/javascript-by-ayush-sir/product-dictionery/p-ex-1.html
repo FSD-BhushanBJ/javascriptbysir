@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ex One</title>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+        }
+        header{
+            height: 80px;
+            width: 100%;
+            background-color: red;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            
+            
+        }
+      
+        button{
+            margin-left: 950px;
+            width: 200px;
+            height: 70px;
+            font-size: 25px;
+            border-radius: 9px;
+            background-color: green;
+            color: white;
+            border: none;
+        }
+        
+
+    </style>
+  </head>
+  <body>
+    <header>
+        <h1 id="count" style="margin-left: 50px; color: white;">Product Count :</h1>
+        <button id="add" onclick="addProduct()">Add Product +</button>
+        <h2 id="cart-count">Cart : 0</h2>
+    </header>
+    <h1 id="display"></h1>
+    <script src="./product.js"></script>
+    <script>
+     
+    //   console.log(itProducts);
+
+
+    // print using for loop
+    //   let output = "";
+
+    //   for (let i = 0; i <= itProducts.length - 1; i++) {
+    //     output +=
+    //       itProducts[i].ProductName + " - ₹" + itProducts[i].price + "<br>";
+    //   }
+
+    //   document.getElementById("display").innerHTML = output;
+
+
+    // print using map fucntions
+    //   itProducts.map((Product)=> {
+    //     document.getElementById("display").innerHTML += `<li>${Product.ProductName}<br> Price : ${Product.price}</li>`
+    //     document.getElementById("count").innerHTML = `Product Count :${itProducts.length}`
+    //   })
+
+
+      function addProduct(){
+        let input = prompt("Add Product")
+        let pinput = prompt("Enter Product Price")
+        itProducts.push({
+            ProductName: input,
+            price: pinput,
+        })
+
+        count();
+        addedpro();
+      };
+
+      function count(){
+        document.getElementById("count").innerHTML = `Product Count :${itProducts.length}`
+      };
+      function addedpro(){
+        itProducts.map((Product,index)=> {
+        document.getElementById("display").innerHTML += `<li>${Product.ProductName}<br> Price : ${Product.price} <button onclick="deleteBut(${index})">Remove</button></li> <button onclick="cartCount(${itProducts})">Add to cart</button>`
+        //  `
+      })
+      };
+      count();
+      addedpro();
+    
+
+      let cartArr = []
+      let cartcount = 0 
+      function cartCount(itProducts){
+        cardcount++;
+        document.getElementById("cart-count").innerHTML = `Cart : ${cartcount}`
+        cartArr.push();
+        
+      }
+
+    //   delete button
+
+    function deleteBut(index){
+        itProducts.splice(index,1);
+
+        console.log(itProducts)
+
+            count();
+            addedpro();
+    }
+    </script>
+  </body>
+</html>

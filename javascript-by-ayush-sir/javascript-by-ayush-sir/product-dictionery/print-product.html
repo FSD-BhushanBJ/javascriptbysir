@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Product Lists</title>
+  </head>
+  <body>
+    <h1 id="display"></h1>
+    <script src="./product.js"></script>
+    <script>
+      document.getElementById("display").innerHTML = itProducts;
+      console.log(itProducts);
+
+      let output = "";
+
+      
+      for (let i = 0; i <= itProducts.length-1; i++) {
+        output +=
+          itProducts[i].ProductName + " - ₹" + itProducts[i].price + "<br>";
+      }
+
+      
+      document.getElementById("display").innerHTML = output;
+    </script>
+  </body>
+</html>
